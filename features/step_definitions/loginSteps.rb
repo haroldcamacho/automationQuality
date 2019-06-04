@@ -1,7 +1,7 @@
 # Given I am on the Google homepage
 Given(/^I am on the sistema de revision y evaluacion de documentos login page$/) do
     page.driver.browser.manage.window.maximize
-    visit ('/')
+    visit ('/users/sign_in')
   end
   
 #   When I search for "houston dynamo tickets"
