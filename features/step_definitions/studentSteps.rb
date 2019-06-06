@@ -4,8 +4,6 @@ Given("I am in the register student page") do
   
   When("I enter name {string}") do |string|
     fill_in 'user_name', :with => string
-    #loginMessage = 'Access details to demo site'
-    #find(:xpath, '/html/body/table/tbody/tr[1]/td/h2', :text => loginMessage)
   end
   
   When("I enter lastname {string}") do |string|
