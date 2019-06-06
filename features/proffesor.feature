@@ -36,3 +36,14 @@ Scenario: Correct display of review form
     And I will search "pruebaCarlos" row
     And I will click the create form button
     Then I should see the tittle "Nuevo Formulario de Revisión"
+
+Scenario: Correct display of confirmation creation review form
+    Given I am in the application page
+    And I enter username "carlos123"
+    And I enter password "123123"
+    When I will be redirected to the "Eventos" page, with name "carlos perez"
+    And I will search "pruebaCarlos" row
+    And I will click the create form button
+    And I will see the tittle "Nuevo Formulario de Revisión"
+    And I will click the "Crear Formulario" link
+    Then I should see the confirmation creation review form
