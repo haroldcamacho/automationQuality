@@ -19,6 +19,10 @@ Scenario: Upload a valid pdf format file
   And type "documento de prueba" on the Resume field
   And upload the "pruebaQA.pdf" file
   And click on the button "Registrar"
+<<<<<<< HEAD
   Then I will be redirected to the "Documentos" page
   And the file "pruebaQA" I just uploaded is listed
 
+=======
+  Then I will be redirected to the "Documentos" page
+>>>>>>> 23ec54228afa3da6e9a47b4f62fafbd5817fcafe
