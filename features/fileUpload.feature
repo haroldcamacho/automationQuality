@@ -22,27 +22,3 @@ Scenario: Upload a valid pdf format file
   Then I will be redirected to the "Documentos" page
   And the file "pruebaQA" I just uploaded is listed
 
-
-#   Scenario: Upload a valid pdf format file
-#   Given I am on the "Eventos" page
-#   When I select the "capybara" event
-#   And I click on "añadir" button 
-#   And I fill the form with data as shown below
-#     |Tipo de documento:        | Proyecto de Grado  |
-#     |Titulo:     	           | prueba             |
-#     |Link archivo Google Docs: | prueba.com         |
-#     |Resumen o Introducción:   | documento de prueba|
-#   And I click on the "Elija un archivo" button 
-#   And select the "prueba.pdf" file
-#   And click on the button "Registrar"
-#   Then I will be redirected to the "Documentos" page
-
-#  When("I click on the Elija un archivo button") do |string|
-  #  
-  # end
-
-#   When("I click on the Elija un archivo button") do
-#   find(:id, "paper_pdf_file").click
-#   #find('input', id: 'paper_pdf_file').click
-#   sleep(10)
-# end
