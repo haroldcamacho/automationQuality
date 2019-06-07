@@ -42,3 +42,12 @@ end
   Then("the file {string} I just uploaded is listed") do |string|
     find_all('a', text: string)
   end
+
+  When("try to upload the {string} file") do |string|
+    page.attach_file('paper[pdf_file]',File.absolute_path('./features/step_definitions/docs/'+string), make_visible: true)
+  end
+  
+  Then("the error message {string} will be shown") do |string|
+    find('div', text: string)
+    page.has_text?(string)
+  end
