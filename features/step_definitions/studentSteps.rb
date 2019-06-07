@@ -25,9 +25,8 @@ Given("I am in the register student page") do
   end
 
   When("I choose as career {string}") do |string|
-
-    #find(:xpath, '/html/body/div/div/div/div/div/form/div[5]/div/input', :text => 'Ingeniería de Sistemas') 
-    find('select-dropdown dropdown-trigger').set('Ingeniería de Sistemas')
+    find(:xpath, '/html/body/div/div/div/div/div/form/div[5]/div/input').click 
+    page.find('span', text: 'Ingeniería de Sistemas').click
   end
   
   When("I enter mail {string}") do |string|
@@ -45,6 +44,7 @@ Given("I am in the register student page") do
   When("I press register button {string}") do |string|
     #click('Registrarse')
     click_button('button')
+    sleep(4)
   end
 
   Then("I will see an error message {string}") do |string|

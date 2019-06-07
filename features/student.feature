@@ -13,7 +13,7 @@ Scenario: Succesful register
     And I re enter password "123456"
     And I choose as career "Ingeniería de Sistemas"
     And I press register button "REGISTRARSE"
-    Then I will be redirected to the "eventos" page
+    Then I will login to the page, with name "abel mamani"
 
 Scenario: Email error
     Given I am in the register student page

@@ -18,3 +18,6 @@ end
     end
     page.has_text?(tittle)
   end
+  Then("I will login to the page, with name {string}") do |string|
+    page.has_text?(string)
+  end
