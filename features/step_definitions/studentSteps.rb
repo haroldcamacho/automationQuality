@@ -14,18 +14,10 @@ When("I enter as username {string}") do |string|
   fill_in 'user_username', :with => string
 end
 
-When("I enter ci {string}") do |string|
-  fill_in 'user_ci', :with => string
-end
-
-When("I enter a phone {string}") do |string|
-  fill_in 'user_phone', :with => string.to_i
-end
-
-When("I choose as career {string}") do |string|
-  #find(:xpath, '/html/body/div/div/div/div/div/form/div[5]/div/input', :text => 'Ingeniería de Sistemas') 
-  find('select-dropdown dropdown-trigger').set('Ingeniería de Sistemas')
-end
+  When("I choose as career {string}") do |string|
+    find(:xpath, '/html/body/div/div/div/div/div/form/div[5]/div/input').click 
+    page.find('span', text: 'Ingeniería de Sistemas').click
+  end
   
 When("I enter mail {string}") do |string|
   fill_in 'user_email', :with => string
@@ -39,9 +31,15 @@ When("I re enter password {string}") do |string|
   fill_in 'user_password_confirmation', :with => string
 end
   
-When("I press register button {string}") do |string|
-  click_button('button')
-end
+  When("I press register button {string}") do |string|
+    #click('Registrarse')
+    click_button('button')
+    sleep(4)
+  end
+
+  Then("I will see an error message {string}") do |string|
+    page.has_text?(string)
+  end
 
 Then("I will see an error message {string}") do |string|
   page.has_text?(string)
