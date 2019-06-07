@@ -12,34 +12,33 @@ end
   end
   
   When("I select proyecto de Grado") do
-    find(:xpath, '//*[@id="new_paper"]/div[1]/div/input').click.native.send_keys(:down)  
-    sleep(10)
+    find(:xpath, '//*[@id="new_paper"]/div[1]/div/input').click
+    find('span', text: 'Proyecto de Grado').click
   end
   
   When("I type {string} on the titulo field") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    fill_in('paper[title]', :with => string)
   end
   
   When("fill {string} on the google docs Link") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    fill_in('paper[google_docs_link]', :with => string)
   end
   
   When("type {string} on the Resume field") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    fill_in('paper[resume]', :with => string)
   end
   
-  When("I click on the {string} button") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  When("select the {string} file") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+  When("upload the {string} file") do |string|
+    page.attach_file('paper[pdf_file]',File.absolute_path('./features/step_definitions/docs/'+string), make_visible: true)
   end
   
   When("click on the button {string}") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    click_button(string)
   end
   
   Then("I will be redirected to the {string} page") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    page.has_text?(string)
+  end
+  Then("the file {string} I just uploaded is listed") do |string|
+    find_all('a', text: string)
   end

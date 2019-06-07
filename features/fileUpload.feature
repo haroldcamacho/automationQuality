@@ -14,10 +14,11 @@ Scenario: Upload a valid pdf format file
   When I select the "capybara" event
   And I click on "añadir" button 
   And I select proyecto de Grado
-  And I type "prueba" on the titulo field
-  And fill "prueba.com" on the google docs Link
+  And I type "pruebaQA" on the titulo field
+  And fill "pruebaQA.com" on the google docs Link
   And type "documento de prueba" on the Resume field
-  And I click on the "Elija un archivo" button 
-  And select the "prueba.pdf" file
+  And upload the "pruebaQA.pdf" file
   And click on the button "Registrar"
   Then I will be redirected to the "Documentos" page
+  And the file "pruebaQA" I just uploaded is listed
+
