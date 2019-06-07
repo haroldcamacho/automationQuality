@@ -14,25 +14,22 @@ Scenario: Upload a valid pdf format file
   When I select the "capybara" event
   And I click on "añadir" button 
   And I select proyecto de Grado
-  And I type "prueba" on the titulo field
-  And fill "prueba.com" on the google docs Link
+  And I type "pruebaQA" on the titulo field
+  And fill "pruebaQA.com" on the google docs Link
   And type "documento de prueba" on the Resume field
-  And I click on the "Elija un archivo" button 
-  And select the "prueba.pdf" file
+  And upload the "pruebaQA.pdf" file
   And click on the button "Registrar"
   Then I will be redirected to the "Documentos" page
+  And the file "pruebaQA" I just uploaded is listed
 
-
-#   Scenario: Upload a valid pdf format file
-#   Given I am on the "Eventos" page
-#   When I select the "capybara" event
-#   And I click on "añadir" button 
-#   And I fill the form with data as shown below
-#     |Tipo de documento:        | Proyecto de Grado  |
-#     |Titulo:     	           | prueba             |
-#     |Link archivo Google Docs: | prueba.com         |
-#     |Resumen o Introducción:   | documento de prueba|
-#   And I click on the "Elija un archivo" button 
-#   And select the "prueba.pdf" file
-#   And click on the button "Registrar"
-#   Then I will be redirected to the "Documentos" page
+Scenario: Upload an invalid txt format file
+  Given I am on the "Eventos" page
+  When I select the "capybara" event
+  And I click on "añadir" button 
+  And I select proyecto de Grado
+  And I type "pruebaQA" on the titulo field
+  And fill "pruebaQA.com" on the google docs Link
+  And type "documento de prueba" on the Resume field
+  And try to upload the "config.txt" file
+  And click on the button "Registrar"
+  Then the error message "Debe elegir un archivo PDF" will be shown

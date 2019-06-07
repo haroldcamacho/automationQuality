@@ -1,0 +1,6 @@
+ClientConfiguration clientConfig = new ClientConfiguration().withRequestTimeout(501000);
+        clientConfig.setUseTcpKeepAlive(true);
+        clientConfig.setMaxErrorRetry(3);
+        clientConfig.setConnectionTimeout(501000);
+        clientConfig.setSocketTimeout(501000);
+        
