@@ -12,8 +12,11 @@ Given(/^I was redirected to the "([^"]*)" page, with name "([^"]*)"$/) do |tittl
     end
     page.has_text?(tittle)
 end
-Then(/^I will click in my name link$/) do
+
+When(/^I will click in my name link$/) do
     find(:xpath, '/html/body/nav/div/div/ul[1]/li/a').click
-    
-    ##acabar
+end
+
+Then("I will click in {string} link") do |string|
+    click_link(string)
 end
