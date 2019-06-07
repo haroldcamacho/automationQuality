@@ -33,3 +33,4 @@ Scenario: Upload an invalid txt format file
   And try to upload the "config.txt" file
   And click on the button "Registrar"
   Then the error message "Debe elegir un archivo PDF" will be shown
+

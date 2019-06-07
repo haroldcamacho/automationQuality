@@ -48,6 +48,5 @@ end
   end
   
   Then("the error message {string} will be shown") do |string|
-    find('div', text: string)
     page.has_text?(string)
   end
