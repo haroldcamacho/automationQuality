@@ -18,6 +18,9 @@ When(/^I enter the required fields as show below$/) do |table|
 	when "Career:"
     find(:xpath, '/html/body/div/div/div/div/div/form/div[5]/div/input').click 
     page.find('span', text: value).click
+	when "User Career:"
+    find(:xpath, '/html/body/div/div/div/div/div/form/div[4]/div[1]/div/input').click 
+    page.find('span', text: value).click
 	when "Email:"
 		fill_in 'user_email', :with => value
 	when "Password:"
