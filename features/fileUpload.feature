@@ -8,28 +8,41 @@ Background: Student is logged In
   And I enter password "123123"
   Then I will be redirected to the "Eventos" page, with name "Harold Camacho"
 
-
-Scenario: Upload a valid pdf format file
+Scenario Outline: Upload a valid pdf format file
   Given I am on the "Eventos" page
   When I select the "capybara" event
   And I click on "añadir" button 
-  And I select proyecto de Grado
-  And I type "pruebaQA" on the titulo field
-  And fill "pruebaQA.com" on the google docs Link
-  And type "documento de prueba" on the Resume field
+  And I select "<Tipo_de_Documento>"
+  And I type "<Titulo>" on the titulo field
+  And fill "<Link>" on the google docs Link
+  And type "<Resumen_o_Introduccion>" on the Resume field
   And upload the "pruebaQA.pdf" file
   And click on the button "Registrar"
   Then I will be redirected to the "Documentos" page
   And the file "pruebaQA" I just uploaded is listed
 
-Scenario: Upload an invalid txt format file
+Examples:
+  | Tipo_de_Documento | Titulo     | Link               | Resumen_o_Introduccion |
+  | Proyecto de Grado | pruebaQA1  | pruebaQA1.com      |  documento de prueba   |
+  | Tesis de Grado    | pruebaQA2  | pruebaQA2.com      |  documento de prueba   |
+  | Pasantía          | pruebaQA3  | pruebaQA3.com      |  documento de prueba   |
+  | Trabajo Dirigido  | pruebaQA4  | pruebaQA4.com      |  documento de prueba   |
+
+Scenario Outline: Upload an invalid txt format file
   Given I am on the "Eventos" page
   When I select the "capybara" event
   And I click on "añadir" button 
-  And I select proyecto de Grado
-  And I type "pruebaQA" on the titulo field
-  And fill "pruebaQA.com" on the google docs Link
-  And type "documento de prueba" on the Resume field
+  And I select "<Tipo_de_Documento>"
+  And I type "<Titulo>" on the titulo field
+  And fill "<Link>" on the google docs Link
+  And type "<Resumen_o_Introduccion>" on the Resume field
   And try to upload the "config.txt" file
   And click on the button "Registrar"
   Then the error message "Debe elegir un archivo PDF" will be shown
+
+Examples:
+  | Tipo_de_Documento | Titulo     | Link               | Resumen_o_Introduccion |
+  | Proyecto de Grado | pruebaQA1  | pruebaQA1.com      |  documento de prueba   |
+  | Tesis de Grado    | pruebaQA2  | pruebaQA2.com      |  documento de prueba   |
+  | Pasantía          | pruebaQA3  | pruebaQA3.com      |  documento de prueba   |
+  | Trabajo Dirigido  | pruebaQA4  | pruebaQA4.com      |  documento de prueba   |
