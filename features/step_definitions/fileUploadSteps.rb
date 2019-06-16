@@ -17,11 +17,6 @@ end
     find('span', text: string).click
   end
   
-  # When("I select proyecto de Grado") do
-  #   find(:xpath, '//*[@id="new_paper"]/div[1]/div/input').click
-  #   find('span', text: 'Proyecto de Grado').click
-  # end
-  
   When("I type {string} on the titulo field") do |string|
     fill_in('paper[title]', :with => string)
   end
