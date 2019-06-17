@@ -2,6 +2,8 @@ Feature: As a estudent
          I want to register my account
          So i can use the app
 
+@Regression
+@SmokeTests
 Scenario: Succesful register
     Given I am in the register student page
     When I enter the required fields as show below
@@ -16,6 +18,7 @@ Scenario: Succesful register
 	And I press register button "REGISTRARSE"
     Then I will login to the page, with name "abel mamani"
 
+@Regression
 Scenario: Email error
     Given I am in the register student page
     When I enter the required fields as show below
@@ -30,6 +33,7 @@ Scenario: Email error
     And I press register button "REGISTRARSE"
     Then I will stay at register page
 
+@Regression
 Scenario: telephone error
     Given I am in the register student page
     When I enter the required fields as show below
@@ -45,6 +49,7 @@ Scenario: telephone error
     And I press register button "REGISTRARSE"
     Then I will see an error message "El celular no puede tener más de 8 caracteres"
 
+@Regression
 Scenario: blank email
     Given I am in the register student page
     When I enter the required fields as show below

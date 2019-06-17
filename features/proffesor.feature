@@ -7,6 +7,8 @@ Background:
     And I enter username "carlos123"
     And I enter password "123123"
 
+@Regression
+@SmokeTests
 Scenario: Correct display of documents assigned as tutor
     When I will be redirected to the "Eventos" page, with name "carlos perez"
     And I will click the "Documentos" link
@@ -16,6 +18,7 @@ Scenario: Correct display of documents assigned as tutor
     And I should see the header "Estudiante"
     And I should see the header "Carrera"
 
+@Regression
 Scenario: Correct display of documents assigned as relator
     When I will be redirected to the "Eventos" page, with name "carlos perez"
     And I will click the "Documentos" link

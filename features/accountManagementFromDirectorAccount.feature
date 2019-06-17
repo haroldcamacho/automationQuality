@@ -11,7 +11,6 @@ Background: Director is logged In
   And click on "Crear Usuarios" from the drop menu
   Then I should be redirected to the "Crear Usuario" window
 
-
 Scenario: Unsuccesful register of a student with error phone
   When I enter the required fields as show below
 	|First Name: 	    | abel                   |
@@ -24,6 +23,7 @@ Scenario: Unsuccesful register of a student with error phone
   And I press register button "REGISTRARSE"
   Then I will stay at "Crear usuario" page
 
+@Regression
 Scenario: Succesful register of a student with valid phone
   When I enter the required fields as show below
 	|First Name: 	    | abel                   |
@@ -36,6 +36,8 @@ Scenario: Succesful register of a student with valid phone
   And I press register button "REGISTRARSE"
   Then I will stay at "Usuarios" page
 
+@Regression
+@SmokeTests
 Scenario: Succesful register of a student with valid phone
   When I enter the required fields as show below
 	|First Name: 	    | abel                   |
@@ -96,6 +98,7 @@ Scenario: Unsuccesful register of a student without last name
   And I press register button "REGISTRARSE"
   Then I will see an error message "Los apellidos no pueden estar vacíos"
 
+@Regression
 Scenario: Unsuccesful register of a student without user name
   When I enter the required fields as show below
 	|First Name: 	    | abel                   |

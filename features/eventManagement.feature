@@ -8,6 +8,8 @@ Background: Admin is logged In
   And I enter password ".sandoval."
   Then I will be redirected to the "Eventos" page, with name "Juan Pablo Sandóval Alcocer"
 
+@Regression
+@SmokeTests
 Scenario Outline: Create an event
   Given I am on the "Eventos" page
   When I select the Eventos button on the menu

@@ -8,6 +8,8 @@ Background: Student is logged In
   And I enter password "123123"
   Then I will be redirected to the "Eventos" page, with name "Harold Camacho"
 
+@Regression 
+@SmokeTests
 Scenario Outline: Upload a valid pdf format file
   Given I am on the "Eventos" page
   When I select the "capybara" event
